@@ -4,11 +4,13 @@ defmodule CSprojSOUPGenerator.CLI do
       strict: [
         recursive: :boolean,
         out: :string,
+        summary: :boolean,
         help: :boolean
       ],
       aliases: [
         r: :recursive,
         o: :out,
+        s: :summary,
         h: :help
       ]
     ]
@@ -17,6 +19,7 @@ defmodule CSprojSOUPGenerator.CLI do
   defp options_defaults() do
     [
       recursive: false,
+      summary: false,
       out: "soups.md"
     ]
   end
@@ -35,7 +38,7 @@ defmodule CSprojSOUPGenerator.CLI do
 
       opts
       |> Keyword.merge(options_defaults(), fn _, v1, _ -> v1 end)
-      |> then(&CSprojSOUPGenerator.generate(input_dir, &1[:out], &1[:recursive]))
+      |> then(&CSprojSOUPGenerator.generate(input_dir, &1[:out], &1[:recursive], &1[:summary]))
     end
   end
 
@@ -56,6 +59,7 @@ defmodule CSprojSOUPGenerator.CLI do
     Options:
         -r|--recursive      Recursively search the input directory for .csproj files. Default: #{defaults[:recursive]}
         -o|--out <name>     Define the name of the output file. Default: #{defaults[:out]}
+        -s|--summary        Collect SOUPs from all found project files into a single table, instead of one table per project.
         -h|--help           Show this help
     """
     |> IO.puts()
