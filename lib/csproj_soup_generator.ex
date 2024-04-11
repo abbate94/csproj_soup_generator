@@ -10,7 +10,7 @@ defmodule CSProjSOUPGenerator do
   def generate(root_dir, output_file_path, recurse, summarize) do
     root_dir
     |> find_csproj_files(recurse)
-    |> Enum.map(&{&1, parse_packages_in_csproj(&1)})
+    |> Enum.map(&{String.trim_leading(&1, "#{root_dir}/"), parse_packages_in_csproj(&1)})
     |> process_files(summarize)
     |> write_result(output_file_path)
   end
