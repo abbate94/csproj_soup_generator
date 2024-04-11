@@ -59,7 +59,7 @@ defmodule CSProjSOUPGenerator.CLI do
     Options:
         -r|--recursive      Recursively search the input directory for .csproj files. Default: #{defaults[:recursive]}
         -o|--out <name>     Define the name of the output file. Default: #{defaults[:out]}
-        -s|--summary        Collect SOUPs from all found project files into a single table, instead of one table per project.
+        -s|--summary        Collect SOUPs from all found project files into a single table, instead of one table per project. Default: #{defaults[:summary]}
         -h|--help           Show this help
     """
     |> IO.puts()
