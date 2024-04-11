@@ -1,4 +1,4 @@
-defmodule CSprojSOUPGenerator do
+defmodule CSProjSOUPGenerator do
   @package_header "SOUP Title"
   @package_header_length String.length(@package_header)
   @link_header "Origin (e.g. GitHub location)"

@@ -1,4 +1,4 @@
-defmodule CSprojSOUPGenerator.MixProject do
+defmodule CSProjSOUPGenerator.MixProject do
   use Mix.Project
 
   def project do
@@ -12,5 +12,5 @@ defmodule CSprojSOUPGenerator.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application, do: [extra_applications: [:logger]]
 
-  def escript, do: [main_module: CSprojSOUPGenerator.CLI]
+  def escript, do: [main_module: CSProjSOUPGenerator.CLI]
 end

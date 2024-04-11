@@ -1,8 +1,8 @@
-defmodule CSprojSOUPGeneratorTest do
+defmodule CSProjSOUPGeneratorTest do
   use ExUnit.Case
-  doctest CSprojSOUPGenerator
+  doctest CSProjSOUPGenerator
 
   test "greets the world" do
-    assert CSprojSOUPGenerator.hello() == :world
+    assert CSProjSOUPGenerator.hello() == :world
   end
 end

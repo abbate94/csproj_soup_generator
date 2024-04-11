@@ -1,4 +1,4 @@
-defmodule CSprojSOUPGenerator.CLI do
+defmodule CSProjSOUPGenerator.CLI do
   defp options_config() do
     [
       strict: [
@@ -38,7 +38,7 @@ defmodule CSprojSOUPGenerator.CLI do
 
       opts
       |> Keyword.merge(options_defaults(), fn _, v1, _ -> v1 end)
-      |> then(&CSprojSOUPGenerator.generate(input_dir, &1[:out], &1[:recursive], &1[:summary]))
+      |> then(&CSProjSOUPGenerator.generate(input_dir, &1[:out], &1[:recursive], &1[:summary]))
     end
   end
 
